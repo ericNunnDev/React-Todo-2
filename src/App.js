@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Todo from './components/TodoComponents/Todo';
+import './components/TodoComponents/Todo.css';
 
 class App extends Component {
   constructor() {
@@ -7,10 +9,13 @@ class App extends Component {
       todo: '',
     }
   }
+
+
+  
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
+        <Todo />
       </div>
     );
   }
