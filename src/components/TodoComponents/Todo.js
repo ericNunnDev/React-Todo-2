@@ -1,12 +1,12 @@
 import React from 'react';
-import TodoForm from './TodoForm';
 
 const Todo = props => {
     console.log(props)
     return (
         <div>
-        <h1>{props.item.todo}</h1>
-        <TodoForm />
+            <ul>
+                <li>{props.todo.item}</li>
+            </ul>
         </div>
     )
 }

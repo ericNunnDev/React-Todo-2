@@ -1,23 +1,40 @@
 import React, { Component } from 'react';
-import Todo from './components/TodoComponents/Todo';
+import TodoList from './components/TodoComponents/TodoList';
+import TodoForm from './components/TodoComponents/TodoForm';
 import './components/TodoComponents/Todo.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      todo: data,
-    }
+      todos: [
+        {
+          id: Date.now(),
+          item: 'Finish my portfolio',
+          completed: false
+        },
+        {
+          id: Date.now(),
+          item: 'Apply for jobs',
+          completed: false
+        }
+      ],
+      todo: ''
+    };
   }
 
+  handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
-  
   render() {
-    const todoItems = this.state.todo.map(item => <Todo item={item} />)
-
-    return (
+      return (
       <div>
-        {todoItems}
+        <TodoList
+          todos={this.state.todos}
+        />
+       <TodoForm
+         value={this.state.todo}
+         onChange={this.handleChange}
+       />
       </div>
     );
   }
